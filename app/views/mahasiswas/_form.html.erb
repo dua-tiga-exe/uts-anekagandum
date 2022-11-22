@@ -1,0 +1,32 @@
+<%= form_with(model: mahasiswa) do |form| %>
+  <% if mahasiswa.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(mahasiswa.errors.count, "error") %> prohibited this mahasiswa from being saved:</h2>
+
+      <ul>
+        <% mahasiswa.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :nama, style: "display: block" %>
+    <%= form.text_field :nama %>
+  </div>
+
+  <div>
+    <%= form.label :alamat, style: "display: block" %>
+    <%= form.text_field :alamat %>
+  </div>
+
+  <div>
+    <%= form.label :umur, style: "display: block" %>
+    <%= form.text_field :umur %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
